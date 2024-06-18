@@ -12,20 +12,15 @@
         <header>
             <nav class="navbar navbar-expand-lg" style="background-color: beige">
                 <div class="container-fluid" id="meine-navbar"></div>
+                
             </nav>     
         </header>
 
-
-
-
-    <main>
-        <section id="Überschrift"><h1>Depart Mode</h1></section>
-        <section id="Form"></section>
-        
-    </main>
-
-
-
+        <main>
+            <section id="Überschrift"><h1>Depart Mode</h1></section>
+            <section id="Form"></section>
+            
+        </main>
 
         <footer>
             <nav class="navbar navbar-expand-lg" style="background-color: burlywood;">
@@ -43,19 +38,6 @@
         </footer>
     
         <script src="buttonRegister.js"></script>
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                var meineNavbar = document.getElementById("meine-navbar");
-                var xhr = new XMLHttpRequest();
-                xhr.open("GET", "navigation.html", true);
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState === 4 && xhr.status === 200) {
-                        meineNavbar.innerHTML = xhr.responseText;
-                    }
-                };
-                xhr.send();
-            });
-         </script>
-         <!-- <script> src="./navigation.js"</script> -->
+        <script src="navigation.js"></script>
     </body>
 </html>

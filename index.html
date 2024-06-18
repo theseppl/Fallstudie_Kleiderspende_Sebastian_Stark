@@ -12,19 +12,6 @@
         <header>
             <nav class="navbar navbar-expand-lg" style="background-color: beige">
                 <div class="container-fluid" id="meine-navbar"></div>
-            <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    var meineNavbar = document.getElementById("meine-navbar");
-                    var xhr = new XMLHttpRequest();
-                    xhr.open("GET", "navigation.html", true);
-                    xhr.onreadystatechange = function() {
-                        if (xhr.readyState === 4 && xhr.status === 200) {
-                            meineNavbar.innerHTML = xhr.responseText;
-                        }
-                    };
-                    xhr.send();
-                });
-             </script>
             </nav>     
         </header>
 
@@ -43,11 +30,6 @@
         <footer>
             <nav class="navbar navbar-expand-lg" style="background-color: burlywood;">
                 <div class="container-fluid">
-                    <!-- <a class="navbar-brand" href="Home.html">Navbar</a> -->
-                    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    </button> -->
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <!-- <a class="navbar-brand" href="home.html"><img src="./icon.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Depart Mode</a>   -->
                         <a class="nav-link active, navbar-brand" aria-current="page" href="home.html"><img src="./icon.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Depart Mode</a>
@@ -56,11 +38,24 @@
                         <a class="nav-link" href="services.html">Leistungen</a>
                         <a class="nav-link disabled" aria-disabled="true">Zukunft</a>
                         </div>
-                    </div>
                 </div>
                 </nav>
         </footer>
     
         <script src="buttonRegister.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var meineNavbar = document.getElementById("meine-navbar");
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "navigation.html", true);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        meineNavbar.innerHTML = xhr.responseText;
+                    }
+                };
+                xhr.send();
+            });
+         </script>
+         <!-- <script> src="./navigation.js"</script> -->
     </body>
 </html>

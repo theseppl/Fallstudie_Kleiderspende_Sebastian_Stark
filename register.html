@@ -10,15 +10,20 @@
     <body>
         <header>
             <nav class="navbar navbar-expand-lg" style="background-color: beige">
-                <div class="container-fluid">
-                    <div class="navbar-nav">
-                        <a class="nav-link active, navbar-brand" aria-current="page" href="home.html"><img src="./icon.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Depart Mode</a>
-                        <a class="nav-link" href="areas.html">Krisengebiete</a>
-                        <a class="nav-link" href="services.html">Leistungen</a>
-                        <!-- <a href="register.html"><button type="button" class="btn btn-outline-primary" onclick="register()">Anmeldung</button></a> -->
-                        <button class="btn btn-outline-primary" onclick="register()">Zurück</button>
-                    </div>
-                </div>
+                <div class="container-fluid" id="meine-navbar"></div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    var meineNavbar = document.getElementById("meine-navbar");
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("GET", "navigation.html", true);
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+                            meineNavbar.innerHTML = xhr.responseText;
+                        }
+                    };
+                    xhr.send();
+                });
+             </script>
             </nav>
         </header>
 

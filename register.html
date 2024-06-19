@@ -11,31 +11,38 @@
         <header>
             <nav class="navbar navbar-expand-lg" style="background-color: beige">
                 <div class="container-fluid" id="meine-navbar"></div>
-            <!-- <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    var meineNavbar = document.getElementById("meine-navbar");
-                    var xhr = new XMLHttpRequest();
-                    xhr.open("GET", "navigation.html", true);
-                    xhr.onreadystatechange = function() {
-                        if (xhr.readyState === 4 && xhr.status === 200) {
-                            meineNavbar.innerHTML = xhr.responseText;
-                        }
-                    };
-                    xhr.send();
-                });
-             </script> -->
             </nav>
         </header>
 
         <main>
-            <div class="mb-3">
-                <label for="formGroupExampleInput" class="form-label">Example label</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+            <!-- <div class="mt-3">
+                <div class="col-lg-4">
+                    <label for="formGroupExampleInput" class="form-label">Example label</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+
+                </div>
+                
             </div>
             <div class="mb-3">
                 <label for="formGroupExampleInput2" class="form-label">Another label</label>
                 <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
+            </div> -->
+
+
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="container mt-3">
+                        <input type="firstName" class="form-control">
+                    </div>
+                    
+                </div>
+
             </div>
+            
+
+
+
         </main> 
+        <script src="navigation.js"></script>
     </body>
 </html>

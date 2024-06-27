@@ -23,13 +23,15 @@
     </header>
 
     <main>
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-4 mt-3">
-            <div class="card">
-              <h3>Wie möchten Sie spenden?</h3>
-              <img src="./pictures/package.jpg" class="img-fluid rounded-start" alt="...">
+      <div class="d-flex justify-content-center">
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-lg-4 col-md-12 col-sm-12">
+              <img src="./pictures/plane.jpg" class="img-fluid rounded" style="height: calc(100%); width: calc(100%);" alt="...">
+            </div>
+            <div class="col-lg-8 col-md-12 col-sm-12">
               <div class="card-body">
+                <h5 class="card-title">Wie wollen Sie Ihre Spende durchführen?</h5>
 
                 <form id="continue">
                   <div class="form-check">
@@ -49,12 +51,11 @@
                 <div class="row justify-content-center">
                   <button class="btn btn-primary" onclick="fetchOrBring()">Weiter</button>
                 </div> 
-
               </div>
             </div>
           </div>
         </div>
-      </div> 
+      </div>
     </main>
   <script src="navigation.js"></script>
   <script src="./assets/js/bootstrap.bundle.min.js"></script>

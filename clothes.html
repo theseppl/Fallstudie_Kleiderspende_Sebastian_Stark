@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+        <title>Kleidungsstücke</title>
+        
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid" id="meine-navbar"></div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="container">
+                <div class="row mt-3 justify-content-center">
+                    <div class="col-lg-6 col-sm-12">
+                        <h3>Welche Kleidungsstücke möchten Sie spenden?</h3>
+                    </div>
+                </div>
+                
+                <div class="row  mt-3 justify-content-center">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon2"><b>Vorname</b></span>
+                            <input type="text" class="form-control" placeholder="Vorname" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <span class="input-group-text"><b>Nachname</b></span>
+                            <input type="text" class="form-control" placeholder="Nachname" aria-label="Server">
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </main> 
+        <script src="navigation.js"></script>
+        <script>
+            
+            function activate_deactivateRegisterButton() {
+                let acceptAGB = document.getElementById('accept_AGB');
+                let register = document.getElementById('register_button');
+                if (acceptAGB.checked == true) {
+                    register.classList.remove('disabled');
+                } else {
+                    register.classList.add('disabled');
+                }
+            }
+        </script>
+    </body>
+</html>

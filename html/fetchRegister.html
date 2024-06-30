@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+        <link rel="shortcut icon" href="/pictures/icon.png" type="image/png">
         <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> -->
         <title>Anmeldung</title>
         
@@ -129,23 +130,8 @@
                 </div>
             </div>
         </main> 
-        <script src="/navigation.js"></script>
-        <script>
-            
-            function activate_deactivateRegisterButton() {
-                let acceptAGB = document.getElementById('accept_AGB');
-                let register = document.getElementById('register_button');
-                if (acceptAGB.checked == true) {
-                    register.classList.remove('disabled');
-                } else {
-                    register.classList.add('disabled');
-                }
-            }
 
-            function register() {
-                window.open('./clothes.html', '_self')
-            }
-
-        </script>
+        <script src="/logic.js"></script>
+        <script src="/assets/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

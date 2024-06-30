@@ -34,5 +34,11 @@ function activate_deactivateRegisterButton() {
   }
 
   function register() {
-      window.open('./clothes.html', '_self')
+    var postCode = document.getElementById("postCode").value;
+    if (postCode.substring(0, 2) == '01' || postCode.substring(0, 2) == '26' || postCode.substring(0, 2) == '10' || postCode.substring(0, 2) == '40' || postCode.substring(0, 2) == '36' || postCode.substring(0, 2) == '80') {
+        window.open('./clothes.html', '_self')
+    } else {
+        alert('Die Postleitzahl liegt leider nicht im Einzugsgebiet.')
+        
+    }
   }

@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener("DOMContentLoaded", function() {
   var myFooter = document.getElementById("myFooter");
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "/html/navigation.html", true);
+  xhr.open("GET", "/html/footer.html", true);
   xhr.onreadystatechange = function() {
       if (xhr.readyState === 4 && xhr.status === 200) {
           myFooter.innerHTML = xhr.responseText;

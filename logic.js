@@ -48,10 +48,15 @@ function activate_deactivateRegisterButton() {
 // Funktion für die Überprüfung der Postleitzahl bei der Registrierung  
   function register() {
     var postCode = document.getElementById("postCode").value;
+    var form = document.getElementById("eingabe");
+
+    form.reportValidity();
+
     if (postCode.substring(0, 2) == '01' || postCode.substring(0, 2) == '26' || postCode.substring(0, 2) == '10' || postCode.substring(0, 2) == '40' || postCode.substring(0, 2) == '36' || postCode.substring(0, 2) == '80') {
         window.open('/html/clothes.html', '_self')
     } else {
         window.open('/html/wrongPostCode.html', '_self')
         
     }
+
   }

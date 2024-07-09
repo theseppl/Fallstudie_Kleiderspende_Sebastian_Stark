@@ -37,33 +37,33 @@ function donate(){
 
 function activate_deactivateRegisterButton() {
       let acceptAGB = document.getElementById('accept_AGB');
-      let register = document.getElementById('register_button');
+      let registerButton = document.getElementById('register_button');
       if (acceptAGB.checked == true) {
-          register.classList.remove('disabled');
+          registerButton.classList.remove('disabled');
       } else {
-          register.classList.add('disabled');
+          registerButton.classList.add('disabled');
       }
   }
 
 // Funktion für die Überprüfung der Postleitzahl bei der Registrierung  
-  function register() {
-    const form = document.getElementById("eingabe");
+function register() {
+  const form = document.getElementById("eingabe");
 
-    if (form.value.trim() === '') {
-      form.classList.add('is-invalid');
-    } else {
-      form.classList.remove('is-invalid');
-      postalCode();
-    }
+  if (form.value.trim() === '') {
+    form.classList.add('is-invalid');
+  } else {
+    form.classList.remove('is-invalid');
+    postalCode();
   }
+}
 
 // Funktion für die Überprüfung der Postleitzahl bei der Registrierung  
-  function postalCode() {
-    var postCode = document.getElementById("postCode").value;
+function postalCode() {
+  var postCode = document.getElementById("postCode").value;
 
-    if (postCode.substring(0, 2) == '01' || postCode.substring(0, 2) == '26' || postCode.substring(0, 2) == '10' || postCode.substring(0, 2) == '40' || postCode.substring(0, 2) == '36' || postCode.substring(0, 2) == '80') {
-      window.open('/html/clothes.html', '_self')
-    } else {
-      window.open('/html/wrongPostCode.html', '_self')
-    }
+  if (postCode.substring(0, 2) == '01' || postCode.substring(0, 2) == '26' || postCode.substring(0, 2) == '10' || postCode.substring(0, 2) == '40' || postCode.substring(0, 2) == '36' || postCode.substring(0, 2) == '80') {
+    window.open('/html/clothes.html', '_self')
+  } else {
+    window.open('/html/wrongPostCode.html', '_self')
   }
+}

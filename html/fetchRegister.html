@@ -107,7 +107,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-3 col-sm-12">
                         <div class="form-check form-switch" >
-                            <input class="form-check-input" type="checkbox" role="switch" id="accept_AGB" onchange="activate_deactivateRegisterButton()">
+                            <input class="form-check-input" type="checkbox" role="switch" id="accept_AGB" onchange="activate_deactivateRegisterButton()" autocomplete="off">
                             <label class="form-check-label" for="flexSwitchCheckDefault">Ich akzeptiere die AGBs des Depart Mode e.V.</label>
                         </div>
                     </div>
@@ -134,37 +134,5 @@
 
         <script src="/logic.js"></script>
         <script src="/assets/js/bootstrap.bundle.min.js"></script>
-        <!-- <script>
-            var form = document.getElementById('eingabe');
-            var button = document.getElementById('register_button');
-
-            button.onclick = function() {
-                form.reportValidity();
-            } -->
-
-        </script>
-
-        <!-- <script>
-            const form = document.querySelectorAll('.needs-validation')
-            form.addEventListener('submit', event => {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                }
-                form.classList.add('was-validated')
-            }, false)
-        </script> -->
-
-        <!-- <script>
-            const inputField = document.getElementById('eingabe');
-            inputField.addEventListener('input', function() {
-                if (inputField.value.trim() === '') {
-                    inputField.classList.add('is-invalid');
-                    
-                } else {
-                    inputField.classList.remove('is-invalid');
-                }
-            })
-        </script> -->
     </body>
 </html>

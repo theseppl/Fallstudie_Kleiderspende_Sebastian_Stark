@@ -46,17 +46,6 @@ function activate_deactivateRegisterButton() {
   }
 
 // Funktion zur Überprüfung der Pflichtfelder.
-// function register() {
-//   const form = document.getElementById("eingabe");
-
-//   if (form.value.trim() === '') {
-//     form.classList.add('is-invalid');
-//   } else {
-//     form.classList.remove('is-invalid');
-//     postalCode();
-//   }
-// }
-
 function register() {
   let counter = 0;
   const input = [
@@ -66,7 +55,8 @@ function register() {
     document.getElementById('input4'),
     document.getElementById('input5'),
     document.getElementById('input6'),
-    document.getElementById('input7'),
+    document.getElementById('mail'),
+    document.getElementById('postCode'),
   ]
 
 // for-Schleife zum Anzeigen der Validierung der Eingabefelder
@@ -78,20 +68,17 @@ function register() {
     }
   });
 
-// for-Schleife um Aufruf von postalCode() nur bei erfolgreicher Validierung zu ermöglichen.
+// for-Schleife um Aufruf von postalCode() nur bei erfolgreicher Validierung zu ermöglichen
   input.forEach(element => {
     if (element.value.trim() != '') {
       counter++;
-      if (counter == input.length) {
+      if (counter === input.length) {
         postalCode();
-        counter=0;
+        counter = 0;
       }
     }
   });
 }
-
-
-
 
 // Funktion für die Überprüfung der Postleitzahl bei der Registrierung  
 function postalCode() {

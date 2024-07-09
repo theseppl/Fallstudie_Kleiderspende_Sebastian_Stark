@@ -14,26 +14,26 @@
         </header>
 
         <main>
-            <div class="container">
-                <form class="row mt-3 justify-content-center needs-validation">
+            <form class="container">
+                <div class="row mt-3 justify-content-center">
                     <div class="col-lg-6 col-sm-12">
                         <div class="input-group">
                             <span class="input-group-text" id="basic-addon2"><b>Vorname</b></span>
                             <!-- <input type="text" class="form-control" id="eingabe" placeholder="Vorname" required> -->
-                            <input type="text" class="form-control" id="input1" placeholder="Vorname">
+                            <input type="text" class="form-control" id="input1" placeholder="Vorname" required>
                             <span class="input-group-text"><b>Nachname</b></span>
-                            <input type="text" class="form-control" id="input2" placeholder="Nachname" aria-label="Server">
+                            <input type="text" class="form-control" id="input2" placeholder="Nachname" aria-label="Server" required>
                           </div>
                     </div>
-                </form>
+                </div>
              
                 <div class="row mt-2 justify-content-center">
                     <div class="col-lg-6 col-sm-12">
                         <div class="input-group">
                             <span class="input-group-text" id="basic-addon2"><b>Straße</b></span>
-                            <input type="text" class="form-control" id="input3" placeholder="Straße" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <input type="text" class="form-control" id="input3" placeholder="Straße" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
                             <span class="input-group-text"><b>Nr.</b></span>
-                            <input type="text" class="form-control" id="input4" placeholder="Hausnummer" aria-label="Server">
+                            <input type="text" class="form-control" id="input4" placeholder="Hausnummer" aria-label="Server" required>
                         </div>
                     </div>
                 </div>
@@ -41,9 +41,9 @@
                     <div class="col-lg-6 col-sm-12">
                         <div class="input-group">
                             <span class="input-group-text" id="basic-addon2"><b>Ort</b></span>
-                            <input type="text" class="form-control" id="input5" placeholder="Ort" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <input type="text" class="form-control" id="input5" placeholder="Ort" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
                             <span class="input-group-text"><b>Postleitzahl</b></span>
-                            <input id="postCode" type="text" class="form-control" placeholder="Postleitzahl" aria-label="Server">
+                            <input id="postCode" type="text" class="form-control" placeholder="Postleitzahl" aria-label="Server" required>
                         </div>
                     </div>
                 </div>
@@ -51,42 +51,18 @@
                     <div class="col-lg-6 col-sm-12">
                         <div class="input-group">
                             <span class="input-group-text" id="basic-addon2"><b>Telefon</b></span>
-                            <input type="text" class="form-control" id="input6" placeholder="Telefon" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <input type="text" class="form-control" id="input6" placeholder="Telefon" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
                         </div>
                     </div>
                 </div>
                 <div class="row mt-2 justify-content-center">
                     <div class="col-lg-6 col-sm-12">
                         <div class="input-group">
-                            <span class="input-group-text" id="basic-addon2"><b>Mailadresse</b></span>
-                            <input type="text" class="form-control" id="input7" placeholder="Username" aria-label="Username">
-                            <span class="input-group-text"><b>@</b></span>
-                            <input type="text" class="form-control" id="input8" placeholder="Server" aria-label="Server">
+                            <span class="input-group-text" id="basic-addon2"><b>Mail</b></span>
+                            <input type="email" class="form-control" id="mail" placeholder="Mail" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
                         </div>
                     </div>
                 </div>
-                <!-- <div class="row mt-4 justify-content-center">
-                    <div class="col-lg-6 col-sm-12">
-                        <div class="text">
-                            <p class="mb-0">Bitte legen Sie ein Passwort fest.</p>
-                        </div>
-                        <div class="input-group">
-                            <span class="input-group-text" id="basic-addon2"><b>Passwort</b></span>                            
-                            <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-2 justify-content-center">
-                    <div class="col-lg-6 col-sm-12">
-                        <div class="text">
-                            <p class="mb-0">Bitte wiederholen Sie Ihr Passwort.</p>
-                        </div>
-                        <div class="input-group">
-                            <span class="input-group-text" id="basic-addon2"><b>Passwort</b></span>                           
-                            <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
-                        </div>
-                    </div>
-                </div> -->
 
                 <div class="row mt-2 justify-content-center">
                     <div class="col-lg-6">
@@ -125,7 +101,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </main>
         
         <footer>

@@ -78,6 +78,7 @@ function register() {
       }
     }
   });
+  return false;
 }
 
 // Funktion für die Überprüfung der Postleitzahl bei der Registrierung  
@@ -90,3 +91,12 @@ function postalCode() {
     window.open('/html/wrongPostCode.html', '_self')
   }
 }
+
+// Funktion die verhindert, dass mit Enter-Taste Aktionen ausgelöst werden.
+// Dadurch wird sichergestellt, dass nur durch aktivierte Button Aktionen ausgelöst werden.
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+    }
+});
+

@@ -59,14 +59,14 @@ function register() {
     document.getElementById('postCode'),
   ]
 
-// for-Schleife zum Anzeigen der Validierung der Eingabefelder
-  input.forEach(element => {
-    if (element.value.trim() === '') {
-      element.classList.add('is-invalid');
-  } else {
-      element.classList.remove('is-invalid');
-    }
-  });
+// // for-Schleife zum Anzeigen der Validierung der Eingabefelder
+  // input.forEach(element => {
+  //   if (element.value.trim() === '') {
+  //     element.classList.add('is-invalid');
+  // } else {
+  //     element.classList.remove('is-invalid');
+  //   }
+  // });
 
 // for-Schleife um Aufruf von postalCode() nur bei erfolgreicher Validierung zu ermöglichen
   input.forEach(element => {
@@ -78,6 +78,7 @@ function register() {
       }
     }
   });
+  // return false um Standardverhalten Seite neu laden zu vermeiden
   return false;
 }
 

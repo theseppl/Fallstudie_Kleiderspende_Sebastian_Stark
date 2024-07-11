@@ -6,6 +6,19 @@
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
         <link rel="shortcut icon" href="/pictures/icon.png" type="image/png">
         <title>Kleidungsstücke</title>
+
+        <style>
+            footer{
+                @media screen and (max-width: 992px) {
+                    .navbar {
+                        position: sticky;
+                        position: -webkit-sticky; /* Safari */
+                        width: 100%;
+                        display: block;
+                    }
+                }
+            }
+         </style>
         
     </head>
     <body>
@@ -103,7 +116,7 @@
                     </div>
                 </div>
 
-                <div class="row mt-4 justify-content-center">
+                <div class="row my-4 justify-content-center">
                     <div class="col-lg-6 col-sm-12">
                         <div class="d-grid gap-2 col-6 mx-auto">
                             <button id="register_button" class="btn btn-primary" onclick="register()" type="button">Bestätigen</button>

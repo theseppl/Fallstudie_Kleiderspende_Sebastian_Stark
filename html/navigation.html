@@ -7,24 +7,21 @@
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
         <style>
             header{
-                padding-bottom: 2%;
-
-                @media screen and (max-width: 1200px) {
-                    padding-bottom: 4%;
-                }
                 @media screen and (max-width: 992px) {
-                padding-bottom: 10%;
-                }
-                @media screen and (max-width: 992px) {
-                padding-bottom: 10%;
+                    .navbar {
+                        position: sticky;
+                        position: -webkit-sticky; /* Safari */
+                        top: 0;
+                        width: 100%;
+                        display: block;
+                    }
                 }
             }
          </style>
     </head>
     <body>
-
         <header>
-            <nav class="navbar fixed-top shadow" style="background-color: whitesmoke">
+            <nav class="navbar fixed-top shadow" style="background-color: whitesmoke" id="navi">
                 <div class="container-fluid justify-content-center">
                     <div class="navbar-nav">
                         <a class="nav-link active, navbar-brand" aria-current="page" href="/index.html"><img src="/pictures/icon.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Depart Mode</a>

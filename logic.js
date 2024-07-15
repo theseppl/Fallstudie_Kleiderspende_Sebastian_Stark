@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function() {
 let radioOne = document.getElementById("radio1");
       function fetchOrBring() {
         if (radioOne.checked) {
-          // window.open('/html/bringRegister.html', '_self')
           window.open('/html/clothes.html', '_self')
         } else {
           window.open('/html/fetchRegister.html', '_self')
@@ -93,3 +92,21 @@ document.addEventListener("keydown", function(event) {
     }
 });
 
+function final() {
+  const hosen = document.getElementById('trousers').value;
+  localStorage.setItem('meineHosen', hosen);
+  // const gespeicherteHosen = localStorage.getItem('meineHosen');
+  
+  // window.open('/html/final.html', '_self'); 
+  // document.getElementById("hosenText").textContent = ${gespeicherteHosen};
+  lastPage();
+  return false;
+}
+
+function lastPage() {
+  window.open('/html/final.html', '_self'); 
+  const gespeicherteHosen = localStorage.getItem('meineHosen');
+  // document.getElementById("hosenText").textContent = gespeicherteHosen;
+  document.getElementById("hosenText").innerText = "Hallo";
+  
+}

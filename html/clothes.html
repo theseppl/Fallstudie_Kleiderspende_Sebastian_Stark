@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-        <link rel="shortcut icon" href="/pictures/icon.png" type="image/png">
+        <link rel="shortcut icon" href="/pictures/logo.jpg" type="image/png">
         <title>Kleidungsstücke</title>
 
         <style>
@@ -28,7 +28,8 @@
 
         <main>
 
-            <div class="container">
+            <!-- <form class="container" onsubmit="return final()"> -->
+                <form class="container" action="final.html" method="get">
 
                 <div class="row mt-lg-5 pt-3 justify-content-center">
                     <div class="col-lg-6 col-sm-12">
@@ -57,7 +58,7 @@
                     <div class="col-lg-6 col-sm-12">
                         <div class="input-group">
                             <span class="input-group-text" style="width: 100px;"><b>Hosen</b></span>
-                            <input type="number" min="0" class="form-control" placeholder="Anzahl" aria-label="Server">
+                            <input type="number" min="0" class="form-control" placeholder="Anzahl" id="trousers">
                         </div>
                     </div>
                 </div>
@@ -119,12 +120,12 @@
                 <div class="row my-4 justify-content-center">
                     <div class="col-lg-6 col-sm-12">
                         <div class="d-grid gap-2 col-6 mx-auto">
-                            <button id="register_button" class="btn btn-primary" onclick="register()" type="button">Bestätigen</button>
+                            <button id="register_button" class="btn btn-primary" type="submit">Bestätigen</button>
                         </div>
                     </div>
                 </div>
 
-            </div>
+            </form>
         </main> 
 
         <footer>

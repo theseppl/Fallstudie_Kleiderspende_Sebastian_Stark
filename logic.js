@@ -92,21 +92,11 @@ document.addEventListener("keydown", function(event) {
     }
 });
 
+
 function final() {
-  const hosen = document.getElementById('trousers').value;
-  localStorage.setItem('meineHosen', hosen);
-  // const gespeicherteHosen = localStorage.getItem('meineHosen');
-  
-  // window.open('/html/final.html', '_self'); 
-  // document.getElementById("hosenText").textContent = ${gespeicherteHosen};
-  lastPage();
+  window.open('/html/final.html', '_self');
+
   return false;
 }
 
-function lastPage() {
-  window.open('/html/final.html', '_self'); 
-  const gespeicherteHosen = localStorage.getItem('meineHosen');
-  // document.getElementById("hosenText").textContent = gespeicherteHosen;
-  document.getElementById("hosenText").innerText = "Hallo";
-  
-}
+

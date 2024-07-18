@@ -94,9 +94,31 @@ document.addEventListener("keydown", function(event) {
 
 
 function final() {
+
+
   window.open('/html/final.html', '_self');
 
   return false;
 }
 
+class Kleider {
+  constructor(hose, shirts) {
+    this.hose = hose;
+    this.shirts = shirts;
+}
+  // getHose() {
+  //     return this.hose;
+  // }
 
+  getHose() {
+    return {
+      hose: this.hose,
+      shirts: this.shirts,
+    }
+  }
+
+  setHose(hose) {
+    this.hose = hose;
+  }
+}
+window.Kleider = Kleider;

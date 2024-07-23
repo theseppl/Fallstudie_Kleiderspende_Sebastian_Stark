@@ -49,8 +49,8 @@ function activate_deactivateRegisterButton() {
 function register() {
   let counter = 0;
   const input = [
-    document.getElementById('input1'),
-    document.getElementById('input2'),
+    document.getElementById('firstName'),
+    document.getElementById('lastName'),
     document.getElementById('input3'),
     document.getElementById('input4'),
     document.getElementById('input5'),
@@ -78,6 +78,12 @@ function postalCode() {
   var postCode = document.getElementById("postCode").value;
 
   if (postCode.substring(0, 2) == '01' || postCode.substring(0, 2) == '26' || postCode.substring(0, 2) == '10' || postCode.substring(0, 2) == '40' || postCode.substring(0, 2) == '36' || postCode.substring(0, 2) == '80') {
+    let firstName = document.getElementById("firstName").value;
+    localStorage.setItem("firstName", firstName);
+  
+    let lastName = document.getElementById("lastName").value;
+    localStorage.setItem("lastName", lastName);
+    
     window.open('/html/clothes.html', '_self')
   } else {
     window.open('/html/wrongPostCode.html', '_self')
@@ -93,9 +99,37 @@ document.addEventListener("keydown", function(event) {
 });
 
 function final() {
+  let trousers = document.getElementById("trousers").value;
+  localStorage.setItem("trousers", trousers);
+
+  let shirts = document.getElementById("shirts").value;
+  localStorage.setItem("shirts", shirts);
+
+
   window.open('/html/final.html', '_self');
-  window.hosenmatz = "Jogging";
   return false;
 }
 
+
+preElement = document.getElementById('finalList');
+
+let firstName = localStorage.getItem("firstName");
+const firstNameListElement = document.createElement('li');
+firstNameListElement.textContent = "Vorname: " + firstName;
+preElement.appendChild(firstNameListElement);
+
+let lastName = localStorage.getItem("lastName");
+const lastNameListElement = document.createElement('li');
+lastNameListElement.textContent = "Nachname: " + lastName;
+preElement.appendChild(lastNameListElement);
+
+let trousers = localStorage.getItem("trousers");
+const trousersListElement = document.createElement('li');
+trousersListElement.textContent = "Hosen: " + trousers;
+preElement.appendChild(trousersListElement);
+
+let shirts = localStorage.getItem("shirts");
+const shirtsListElement = document.createElement('li');
+shirtsListElement.textContent = "T-Shirts: " + shirts;
+preElement.appendChild(shirtsListElement);
 

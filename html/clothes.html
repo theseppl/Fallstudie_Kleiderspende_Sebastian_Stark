@@ -134,51 +134,10 @@
 
         <script src="/logic.js"></script>
         <script src="/assets/js/bootstrap.bundle.min.js"></script>
+        <script>
+            let fahrradhose = "Radhosenträger";
+            localStorage.setItem("hose", fahrradhose);
+        </script>
 
-        <!-- <script>
-            let kleider = new Kleider("Kurze Hose", "Bandshirt");
-        </script> -->
-
-
-        <!-- <script>
-            class Kleider {
-                hose = "Jeans";
-                shirts = "Marco Polo";
-
-                get hose() {
-                    return this.hose;
-                }
-            }
-        </script> -->
-
-
-
-
-
-
-
-
-
-        <!-- <script>
-            let test = "Hallo Welt";
-            let preElement = document.getElementById('json');
-            fetch('/SachenJson.json')
-                .then(response => response.json())
-                .then(data => {
-                    data.kleid1 = test;
-                    data.kleid2 = "Marco Polo";
-                    const jsonString = JSON.stringify(data, null, 2);
-
-                    // const blob = new Blob([jsonString], {type: 'application/json'});
-                    // const url = URL.createObjectURL(blob);
-                    // const a = document.createElement('a');
-                    // a.href = url;
-                    // a.download = "/SachenJson.json";
-                    // document.body.appendChild(a);
-                    // a.click();
-                    }
-            )
-
-        </script> -->
     </body>
 </html>

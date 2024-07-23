@@ -43,33 +43,13 @@
 
         <script src="/logic.js"></script>
         <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
         <script>
-            let hosenmatz = "Latzhose";
-            let preElement = document.getElementById('json');
-            // fetch('/SachenJson.json')
-            //     .then(response => response.json())
-            //     .then(data => {
-            //         for (let i = 1; i < 3; i++) {
-            //             const li = document.createElement('li');
-            //             li.textContent = data.kleid1;
-            //             preElement.appendChild(li);
-            //         }
-            // })
-
-            // const li = document.createElement('li');
-            // li.textContent = class Kleider.hose();
-            // preElement.appendChild(li);
-
-            // import { Kleider } from "/logic.js";
-            const kleider = new Kleider(hosenmatz, "Bandshirt");
-            const hose = kleider.getHose();
+            preElement = document.getElementById('json');
+            let hosenmatz = localStorage.getItem("hose");
             const li = document.createElement('li');
-            const mi = document.createElement('li');
-            li.textContent = hose.hose;
+            li.textContent = hosenmatz;
             preElement.appendChild(li);
-            mi.textContent = hose.shirts;
-            preElement.appendChild(mi);
-
         </script>
 
     </body>

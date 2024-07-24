@@ -45,16 +45,27 @@ function activate_deactivateRegisterButton() {
       }
   }
 
-  const input = [
-    document.getElementById('firstName'),
-    document.getElementById('lastName'),
-    document.getElementById('input3'),
-    document.getElementById('input4'),
-    document.getElementById('input5'),
-    document.getElementById('input6'),
-    document.getElementById('mail'),
-    document.getElementById('postCode'),
-  ]
+const input = [
+  document.getElementById('firstName'),
+  document.getElementById('lastName'),
+  document.getElementById("street"),
+  document.getElementById("houseNr"),
+  document.getElementById("city"),
+  document.getElementById("telefon"),
+  document.getElementById('mail'),
+  document.getElementById('postCode'),
+]
+
+const idStrings = [
+  "firstName",
+  "lastName",
+  "street",
+  "houseNr",
+  "postCode",
+  "city",
+  "telefon",
+  "mail"
+];
   
 // Funktion zur Überprüfung der Pflichtfelder.
 function register() {
@@ -89,11 +100,20 @@ function postalCode() {
   var postCode = document.getElementById("postCode").value;
 
   if (postCode.substring(0, 2) == '01' || postCode.substring(0, 2) == '26' || postCode.substring(0, 2) == '10' || postCode.substring(0, 2) == '40' || postCode.substring(0, 2) == '36' || postCode.substring(0, 2) == '80') {
-    let firstName = document.getElementById("firstName").value;
-    localStorage.setItem("firstName", firstName);
+    // let firstName = document.getElementById("firstName").value;
+    // localStorage.setItem("firstName", firstName);
+
+    // let lastName = document.getElementById("lastName").value;
+    // localStorage.setItem("lastName", lastName);
   
-    let lastName = document.getElementById("lastName").value;
-    localStorage.setItem("lastName", lastName);
+    // let street = document.getElementById("street").value;
+    // localStorage.setItem("street", street);
+
+    idStrings.forEach(element => {
+      let elementValue = document.getElementById(element).value;
+      localStorage.setItem(element, elementValue);
+    });
+
     
     window.open('/html/clothes.html', '_self')
   } else {
@@ -122,10 +142,9 @@ function final() {
 }
 
 const preElement = document.getElementById('finalList');
-input.forEach(value => {
-  // console.log(value.id);
-  // preElement = document.getElementById('finalList');
-  let inputValue = localStorage.getItem("firstName");
+
+idStrings.forEach(value => {
+  let inputValue = localStorage.getItem(value);
   let valueListElement = document.createElement('li');
   valueListElement.textContent = "Vorname: " + inputValue;
   console.log(valueListElement.textContent);

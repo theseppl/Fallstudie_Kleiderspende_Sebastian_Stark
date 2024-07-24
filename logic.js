@@ -45,9 +45,6 @@ function activate_deactivateRegisterButton() {
       }
   }
 
-// Funktion zur Überprüfung der Pflichtfelder.
-function register() {
-  let counter = 0;
   const input = [
     document.getElementById('firstName'),
     document.getElementById('lastName'),
@@ -58,6 +55,20 @@ function register() {
     document.getElementById('mail'),
     document.getElementById('postCode'),
   ]
+  
+// Funktion zur Überprüfung der Pflichtfelder.
+function register() {
+  let counter = 0;
+  // const input = [
+  //   document.getElementById('firstName'),
+  //   document.getElementById('lastName'),
+  //   document.getElementById('input3'),
+  //   document.getElementById('input4'),
+  //   document.getElementById('input5'),
+  //   document.getElementById('input6'),
+  //   document.getElementById('mail'),
+  //   document.getElementById('postCode'),
+  // ]
 
 // for-Schleife um Aufruf von postalCode() nur bei erfolgreicher Validierung zu ermöglichen
   input.forEach(element => {
@@ -110,26 +121,37 @@ function final() {
   return false;
 }
 
+const preElement = document.getElementById('finalList');
+input.forEach(value => {
+  // console.log(value.id);
+  // preElement = document.getElementById('finalList');
+  let inputValue = localStorage.getItem("firstName");
+  let valueListElement = document.createElement('li');
+  valueListElement.textContent = "Vorname: " + inputValue;
+  console.log(valueListElement.textContent);
+  preElement.appendChild(valueListElement);
+});
 
-preElement = document.getElementById('finalList');
 
-let firstName = localStorage.getItem("firstName");
-const firstNameListElement = document.createElement('li');
-firstNameListElement.textContent = "Vorname: " + firstName;
-preElement.appendChild(firstNameListElement);
+// preElement = document.getElementById('finalList');
 
-let lastName = localStorage.getItem("lastName");
-const lastNameListElement = document.createElement('li');
-lastNameListElement.textContent = "Nachname: " + lastName;
-preElement.appendChild(lastNameListElement);
+// let firstName = localStorage.getItem("firstName");
+// const firstNameListElement = document.createElement('li');
+// firstNameListElement.textContent = "Vorname: " + firstName;
+// preElement.appendChild(firstNameListElement);
 
-let trousers = localStorage.getItem("trousers");
-const trousersListElement = document.createElement('li');
-trousersListElement.textContent = "Hosen: " + trousers;
-preElement.appendChild(trousersListElement);
+// let lastName = localStorage.getItem("lastName");
+// const lastNameListElement = document.createElement('li');
+// lastNameListElement.textContent = "Nachname: " + lastName;
+// preElement.appendChild(lastNameListElement);
 
-let shirts = localStorage.getItem("shirts");
-const shirtsListElement = document.createElement('li');
-shirtsListElement.textContent = "T-Shirts: " + shirts;
-preElement.appendChild(shirtsListElement);
+// let trousers = localStorage.getItem("trousers");
+// const trousersListElement = document.createElement('li');
+// trousersListElement.textContent = "Hosen: " + trousers;
+// preElement.appendChild(trousersListElement);
+
+// let shirts = localStorage.getItem("shirts");
+// const shirtsListElement = document.createElement('li');
+// shirtsListElement.textContent = "T-Shirts: " + shirts;
+// preElement.appendChild(shirtsListElement);
 

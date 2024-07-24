@@ -100,22 +100,12 @@ function postalCode() {
   var postCode = document.getElementById("postCode").value;
 
   if (postCode.substring(0, 2) == '01' || postCode.substring(0, 2) == '26' || postCode.substring(0, 2) == '10' || postCode.substring(0, 2) == '40' || postCode.substring(0, 2) == '36' || postCode.substring(0, 2) == '80') {
-    // let firstName = document.getElementById("firstName").value;
-    // localStorage.setItem("firstName", firstName);
-
-    // let lastName = document.getElementById("lastName").value;
-    // localStorage.setItem("lastName", lastName);
-  
-    // let street = document.getElementById("street").value;
-    // localStorage.setItem("street", street);
-
     idStrings.forEach(element => {
       let elementValue = document.getElementById(element).value;
       localStorage.setItem(element, elementValue);
     });
-
-    
     window.open('/html/clothes.html', '_self')
+
   } else {
     window.open('/html/wrongPostCode.html', '_self')
   }
@@ -141,36 +131,4 @@ function final() {
   return false;
 }
 
-const preElement = document.getElementById('finalList');
-
-idStrings.forEach(value => {
-  let inputValue = localStorage.getItem(value);
-  let valueListElement = document.createElement('li');
-  valueListElement.textContent = "Vorname: " + inputValue;
-  console.log(valueListElement.textContent);
-  preElement.appendChild(valueListElement);
-});
-
-
-// preElement = document.getElementById('finalList');
-
-// let firstName = localStorage.getItem("firstName");
-// const firstNameListElement = document.createElement('li');
-// firstNameListElement.textContent = "Vorname: " + firstName;
-// preElement.appendChild(firstNameListElement);
-
-// let lastName = localStorage.getItem("lastName");
-// const lastNameListElement = document.createElement('li');
-// lastNameListElement.textContent = "Nachname: " + lastName;
-// preElement.appendChild(lastNameListElement);
-
-// let trousers = localStorage.getItem("trousers");
-// const trousersListElement = document.createElement('li');
-// trousersListElement.textContent = "Hosen: " + trousers;
-// preElement.appendChild(trousersListElement);
-
-// let shirts = localStorage.getItem("shirts");
-// const shirtsListElement = document.createElement('li');
-// shirtsListElement.textContent = "T-Shirts: " + shirts;
-// preElement.appendChild(shirtsListElement);
 

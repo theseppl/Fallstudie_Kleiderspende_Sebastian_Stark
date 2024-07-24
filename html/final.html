@@ -30,8 +30,8 @@
 
             <div class="container">
                 <div class="row mt-lg-5 pt-3 justify-content-center">
-                   <h1> <div id="hosenText">letzte Seite</div></h1>
-                   <ul id="finalList"></ul>
+                   <h3> <div id="hosenText">Ihre persönlichen Daten</div></h3>
+                   <ul class="list-group" id="finalList"></ul>
                 </div>
             </div>
             
@@ -44,19 +44,34 @@
         <script src="/logic.js"></script>
         <script src="/assets/js/bootstrap.bundle.min.js"></script>
 
-        <!-- <script>
-            preElement = document.getElementById('json');
+        <!-- Lokales script um Fehler in Konsole zu vermeiden -->
+        <script>
+            const preElement = document.getElementById('finalList');
+            const description = [
+                "Vorname: ",
+                "Nachname: ",
+                "Straße: ",
+                "Hausnummer: ",
+                "Postleitzahl: ",
+                "Stadt: ",
+                "Telefonnummer: ",
+                "Mailadresse: "
+                ];
 
-            let trousers = localStorage.getItem("trousers");
-            const trousersListElement = document.createElement('li');
-            trousersListElement.textContent = "Hosen: " + trousers;
-            preElement.appendChild(trousersListElement);
+            let counter = 0;
+            idStrings.forEach(value => {
+                let inputValue = localStorage.getItem(value);
+                let descriptionElement = document.createElement('li');
+                descriptionElement.textContent = description[counter];
+                preElement.appendChild(descriptionElement);
 
-            let shirts = localStorage.getItem("shirts");
-            const shirtsListElement = document.createElement('li');
-            shirtsListElement.textContent = "T-Shirts: " + shirts;
-            preElement.appendChild(shirtsListElement);
-        </script> -->
+                let valueListElement = document.createElement('li');
+                valueListElement.classList.add("list-group-item");
+                valueListElement.textContent = description[counter] + inputValue;
+                preElement.appendChild(valueListElement);
+                counter++;
+            });
+        </script>
 
     </body>
 </html>

@@ -28,13 +28,25 @@
 
         <main>
 
-            <div class="container">
-                <div class="row mt-lg-5 pt-3 justify-content-center">
-                   <h3> <div id="hosenText">Ihre persönlichen Daten</div></h3>
-                   <ul class="list-group" id="finalList"></ul>
-                </div>
+            <div class="container px-lg-5">
+
+                
+
+                <!-- description list -->
+                <dl class="row mt-lg-5">
+                    <h2>Zusammenfassung</h2>
+                    <br>
+                    <h3>Persönliche Daten</h3>
+                    <div class="col pt-2">
+                        <dt id="finalDescription"></dt>
+                    </div>
+
+                    <div class="col pt-2">
+                        <dd id="finalList"></dd>
+                    </div>
+
+                </dl>
             </div>
-            
         </main> 
 
         <footer>
@@ -46,7 +58,9 @@
 
         <!-- Lokales script um Fehler in Konsole zu vermeiden -->
         <script>
-            const preElement = document.getElementById('finalList');
+            const finalValue = document.getElementById('finalList');
+            const finalDescription = document.getElementById('finalDescription');
+
             const description = [
                 "Vorname: ",
                 "Nachname: ",
@@ -60,15 +74,16 @@
 
             let counter = 0;
             idStrings.forEach(value => {
-                let inputValue = localStorage.getItem(value);
                 let descriptionElement = document.createElement('li');
+                descriptionElement.classList.add("list-group-item");
                 descriptionElement.textContent = description[counter];
-                preElement.appendChild(descriptionElement);
+                finalDescription.appendChild(descriptionElement);
 
+                let inputValue = localStorage.getItem(value);
                 let valueListElement = document.createElement('li');
                 valueListElement.classList.add("list-group-item");
-                valueListElement.textContent = description[counter] + inputValue;
-                preElement.appendChild(valueListElement);
+                valueListElement.textContent = inputValue;
+                finalValue.appendChild(valueListElement);
                 counter++;
             });
         </script>

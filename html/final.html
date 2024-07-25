@@ -30,21 +30,26 @@
 
             <div class="container px-lg-5">
 
-                
-
                 <!-- description list -->
-                <dl class="row mt-lg-5">
+                <dl class="row mt-lg-5 pt-3 justify-content-center"">
                     <h2>Zusammenfassung</h2>
-                    <br>
-                    <h3>Persönliche Daten</h3>
-                    <div class="col pt-2">
+                    <h3 class="pt-3">Persönliche Daten</h3>
+
+                    <div class="col pt-1">
                         <dt id="finalDescription"></dt>
                     </div>
-
-                    <div class="col pt-2">
+                    <div class="col pt-1">
                         <dd id="finalList"></dd>
                     </div>
 
+                    <h3 class="pt-3">Ihre Spendenangaben</h3>
+                    <div class="col pt-1">
+                        <dt id="clothesDescription"></dt>
+                    </div>
+
+                    <div class="col pt-1">
+                        <dd id="clothesList"></dd>
+                    </div>
                 </dl>
             </div>
         </main> 
@@ -58,9 +63,12 @@
 
         <!-- Lokales script um Fehler in Konsole zu vermeiden -->
         <script>
-            const finalValue = document.getElementById('finalList');
             const finalDescription = document.getElementById('finalDescription');
-
+            const finalValue = document.getElementById('finalList');
+            
+            const clothesDescription = document.getElementById('clothesDescription');
+            const clothesValue = document.getElementById('clothesList');
+            
             const description = [
                 "Vorname: ",
                 "Nachname: ",
@@ -71,20 +79,50 @@
                 "Telefonnummer: ",
                 "Mailadresse: "
                 ];
+            
+            const clothesName = [
+                "Hosen: ",
+                "T-Shirts: ",
+                "Pullover: ",
+                "Jacken: ",
+                "Schuhe: ",
+                "Mützen: ",
+                "Sonstiges: "
+            ];
 
             let counter = 0;
             idStrings.forEach(value => {
-                let descriptionElement = document.createElement('li');
+                
+                const descriptionElement = document.createElement('li');
                 descriptionElement.classList.add("list-group-item");
                 descriptionElement.textContent = description[counter];
                 finalDescription.appendChild(descriptionElement);
 
-                let inputValue = localStorage.getItem(value);
-                let valueListElement = document.createElement('li');
+                const inputValue = sessionStorage.getItem(value);
+                const valueListElement = document.createElement('li');
                 valueListElement.classList.add("list-group-item");
                 valueListElement.textContent = inputValue;
                 finalValue.appendChild(valueListElement);
                 counter++;
+            });
+
+            let counter2 = 0;
+            clothesID.forEach(value => {
+                const inputValue = sessionStorage.getItem(value);
+
+                if (inputValue != "" && inputValue != "0") {
+                    const descriptionElement = document.createElement('li');
+                    descriptionElement.classList.add("list-group-item");
+                    descriptionElement.textContent = clothesName[counter2];
+                    clothesDescription.appendChild(descriptionElement);
+
+                    
+                    const valueListElement = document.createElement('li');
+                    valueListElement.classList.add("list-group-item");
+                    valueListElement.textContent = inputValue;
+                    clothesValue.appendChild(valueListElement);                    
+                }
+                counter2++;
             });
         </script>
 

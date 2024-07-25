@@ -56,6 +56,16 @@ const input = [
   document.getElementById('postCode'),
 ]
 
+const clothesInput = [
+  document.getElementById('trousers'),
+  document.getElementById('shirts'),
+  document.getElementById("pullover"),
+  document.getElementById("jackets"),
+  document.getElementById("shoes"),
+  document.getElementById("caps"),
+  document.getElementById('other'),
+]
+
 const idStrings = [
   "firstName",
   "lastName",
@@ -66,20 +76,20 @@ const idStrings = [
   "telefon",
   "mail"
 ];
+
+const clothesID = [
+  "trousers",
+  "shirts",
+  "pullover",
+  "jackets",
+  "shoes",
+  "caps",
+  "other"
+];
   
 // Funktion zur Überprüfung der Pflichtfelder.
 function register() {
   let counter = 0;
-  // const input = [
-  //   document.getElementById('firstName'),
-  //   document.getElementById('lastName'),
-  //   document.getElementById('input3'),
-  //   document.getElementById('input4'),
-  //   document.getElementById('input5'),
-  //   document.getElementById('input6'),
-  //   document.getElementById('mail'),
-  //   document.getElementById('postCode'),
-  // ]
 
 // for-Schleife um Aufruf von postalCode() nur bei erfolgreicher Validierung zu ermöglichen
   input.forEach(element => {
@@ -102,7 +112,7 @@ function postalCode() {
   if (postCode.substring(0, 2) == '01' || postCode.substring(0, 2) == '26' || postCode.substring(0, 2) == '10' || postCode.substring(0, 2) == '40' || postCode.substring(0, 2) == '36' || postCode.substring(0, 2) == '80') {
     idStrings.forEach(element => {
       let elementValue = document.getElementById(element).value;
-      localStorage.setItem(element, elementValue);
+      sessionStorage.setItem(element, elementValue);
     });
     window.open('/html/clothes.html', '_self')
 
@@ -120,13 +130,12 @@ document.addEventListener("keydown", function(event) {
 });
 
 function final() {
-  let trousers = document.getElementById("trousers").value;
-  localStorage.setItem("trousers", trousers);
 
-  let shirts = document.getElementById("shirts").value;
-  localStorage.setItem("shirts", shirts);
-
-
+  clothesID.forEach(element => {
+    let elementValue = document.getElementById(element).value;
+    sessionStorage.setItem(element, elementValue);
+  });
+  
   window.open('/html/final.html', '_self');
   return false;
 }

@@ -31,9 +31,9 @@
             <div class="container px-lg-5">
 
                 <!-- description list -->
-                <dl class="row mt-lg-5 pt-3 justify-content-center"">
+                <dl class="row mt-lg-5 pt-3 justify-content-center">
                     <h2>Zusammenfassung</h2>
-                    <h3 class="pt-3">Persönliche Daten</h3>
+                    <h4 class="pt-3" id="personalData"></h4>
 
                     <div class="col pt-1">
                         <dt id="finalDescription"></dt>
@@ -42,7 +42,7 @@
                         <dd id="finalList"></dd>
                     </div>
 
-                    <h3 class="pt-3">Ihre Spendenangaben</h3>
+                    <h4 class="pt-3">Ihre Spendenangaben</h4>
                     <div class="col pt-1">
                         <dt id="clothesDescription"></dt>
                     </div>
@@ -51,12 +51,29 @@
                         <dd id="clothesList"></dd>
                     </div>
                 </dl>
+
+                <div class="row justify-content-center">
+                    <h3>Vielen Dank für Ihren Spendenauftrag.</h3>
+                </div>
+                
+
+                <div class="row my-3 justify-content-center">
+                    <div class="col">
+                        <div class="d-grid gap-2 col-3 mx-auto">
+                            <button id="register_button" class="btn btn-primary" onclick="finish()">Abschließen</button>
+                            <button id="register_button" class="btn btn-secondary" onclick="history.back()">nochmal zurück</button>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </main> 
 
         <footer>
-            <nav class="navbar navbar-expand-lg fixed-bottom" id="myFooter"></nav>    
+            <nav class="navbar navbar-expand-lg sticky-bottom" id="myFooter"></nav>    
         </footer>
+
+
 
         <script src="/logic.js"></script>
         <script src="/assets/js/bootstrap.bundle.min.js"></script>
@@ -68,6 +85,16 @@
             
             const clothesDescription = document.getElementById('clothesDescription');
             const clothesValue = document.getElementById('clothesList');
+
+            // Hier weiterarbeiten!!!!!!!
+            const personalData = document.getElementById('personalData');
+            const bringFlag = true;
+
+            if (bringFlag == false) {
+                personalData.innerText = "kdjadk";
+            } else {
+                personalData.innerText = "Persönliche Datense";
+            }
             
             const description = [
                 "Vorname: ",
@@ -92,18 +119,21 @@
 
             let counter = 0;
             idStrings.forEach(value => {
-                
-                const descriptionElement = document.createElement('li');
-                descriptionElement.classList.add("list-group-item");
-                descriptionElement.textContent = description[counter];
-                finalDescription.appendChild(descriptionElement);
-
                 const inputValue = sessionStorage.getItem(value);
-                const valueListElement = document.createElement('li');
-                valueListElement.classList.add("list-group-item");
-                valueListElement.textContent = inputValue;
-                finalValue.appendChild(valueListElement);
-                counter++;
+                
+                if (inputValue != "" && inputValue != null) {
+                    const descriptionElement = document.createElement('li');
+                    descriptionElement.classList.add("list-group-item");
+                    descriptionElement.textContent = description[counter];
+                    finalDescription.appendChild(descriptionElement);
+
+                    
+                    const valueListElement = document.createElement('li');
+                    valueListElement.classList.add("list-group-item");
+                    valueListElement.textContent = inputValue;
+                    finalValue.appendChild(valueListElement);
+                    counter++;
+                }
             });
 
             let counter2 = 0;

@@ -23,13 +23,13 @@ document.addEventListener("DOMContentLoaded", function() {
 }); 
 
 let radioOne = document.getElementById("radio1");
-      function fetchOrBring() {
-        if (radioOne.checked) {
-          window.open('/html/clothes.html', '_self')
-        } else {
-          window.open('/html/fetchRegister.html', '_self')
-        }
-      }
+function fetchOrBring() {
+  if (radioOne.checked) {
+    window.open('/html/clothes.html', '_self')
+  } else {
+    window.open('/html/fetchRegister.html', '_self')
+  }
+}
 
 function donate(){
         window.open('/html/donate.html', '_self')
@@ -138,6 +138,11 @@ function final() {
   
   window.open('/html/final.html', '_self');
   return false;
+}
+
+function finish() {
+  sessionStorage.clear();
+  window.open('/index.html', '_self');
 }
 
 

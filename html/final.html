@@ -33,7 +33,6 @@
                 <!-- description list -->
                 <dl class="row mt-lg-5 pt-3 justify-content-center">
                     <h2>Zusammenfassung</h2>
-                    <h4 class="pt-3" id="personalData"></h4>
 
                     <div class="col pt-1">
                         <dt id="finalDescription"></dt>
@@ -52,16 +51,16 @@
                     </div>
                 </dl>
 
-                <div class="row justify-content-center">
-                    <h3>Vielen Dank für Ihren Spendenauftrag.</h3>
+                <div class="row pt-5 d-grid justify-content-center">
+                    <h4>Vielen Dank für Ihren Spendenauftrag!</h4>
                 </div>
                 
 
                 <div class="row my-3 justify-content-center">
                     <div class="col">
-                        <div class="d-grid gap-2 col-3 mx-auto">
+                        <div class="d-grid gap-2 col-2 mx-auto">
                             <button id="register_button" class="btn btn-primary" onclick="finish()">Abschließen</button>
-                            <button id="register_button" class="btn btn-secondary" onclick="history.back()">nochmal zurück</button>
+                            <button id="register_button" class="btn btn-secondary" onclick="history.back()">zurück</button>
                         </div>
                     </div>
                 </div>
@@ -87,14 +86,14 @@
             const clothesValue = document.getElementById('clothesList');
 
             // Hier weiterarbeiten!!!!!!!
-            const personalData = document.getElementById('personalData');
-            const bringFlag = true;
+            // const personalData = document.getElementById('personalData');
+            // const bringFlag = true;
 
-            if (bringFlag == false) {
-                personalData.innerText = "kdjadk";
-            } else {
-                personalData.innerText = "Persönliche Datense";
-            }
+            // if (bringFlag == false) {
+            //     personalData.innerText = "kdjadk";
+            // } else {
+            //     personalData.innerText = "Persönliche Datense";
+            // }
             
             const description = [
                 "Vorname: ",

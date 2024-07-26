@@ -29,39 +29,67 @@
         <main>
 
             <div class="container px-lg-5">
+                <div class="row mt-lg-5">
+                    <div class="col d-grid justify-content-center pt-4"> 
+                        <img src="/pictures/logoWhite.jpg" class="img-fluid" style="height: 64px" alt="">
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col">
+                        <h2>Zusammenfassung</h2>
+                            <p>
+                                Herzlichen Dank für Ihre großzügige Kleiderspende! Bei Depart Mode setzen wir uns mit Leidenschaft dafür ein, Menschen in Not- und besonderen Lebenssituationen zu unterstützen. Ihre Spende trägt dazu bei, dass wir gemeinsam Wärme und Würde schenken können.
+                            </p>
+                    </div>
+                </div>
 
                 <!-- description list -->
-                <dl class="row mt-lg-5 pt-3 justify-content-center">
-                    <h2>Zusammenfassung</h2>
+                <dl class="row mt-2 justify-content-center">
 
-                    <div class="col pt-1">
+                    <div class="col-4 pt-1">
                         <dt id="finalDescription"></dt>
                     </div>
-                    <div class="col pt-1">
+                    <div class="col-4 pt-1 pl-3">
                         <dd id="finalList"></dd>
                     </div>
 
-                    <h4 class="pt-3">Ihre Spendenangaben</h4>
-                    <div class="col pt-1">
-                        <dt id="clothesDescription"></dt>
+                    <div class="row pt-3 d-grid justify-content-center">
+                        <h4>Ihre Spende im Überblick:</h4>
                     </div>
 
-                    <div class="col pt-1">
+                    <div class="col-4 pt-1">
+                        <dt id="clothesDescription"></dt>
+                    </div>
+                    <div class="col-4 pt-1 pl-3">
                         <dd id="clothesList"></dd>
                     </div>
                 </dl>
 
-                <div class="row pt-5 d-grid justify-content-center">
-                    <h4>Vielen Dank für Ihren Spendenauftrag!</h4>
+                <div class="row pt-3 d-grid justify-content-center">
+                    <h4>Vielen Dank für Ihre Spende!</h4>
                 </div>
-                
 
                 <div class="row my-3 justify-content-center">
-                    <div class="col">
-                        <div class="d-grid gap-2 col-2 mx-auto">
-                            <button id="register_button" class="btn btn-primary" onclick="finish()">Abschließen</button>
-                            <button id="register_button" class="btn btn-secondary" onclick="history.back()">zurück</button>
-                        </div>
+                    <div class="col d-grid col-lg-3 col-sm-12">
+                        <button id="register_button" class="btn btn-primary" onclick="finish()">Abschließen</button>
+                    </div>
+                    <div class="col d-grid col-lg-3 col-sm-12">
+                        <button id="register_button" class="btn btn-secondary" onclick="history.back()">zurück</button>
+                    </div>
+                </div>
+
+                <div class="row pt-3 d-grid justify-content-center">
+                    <h4>Auf Wiedersehen!</h4>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col d-grid justify-content-center"> 
+                        <img src="/pictures/logoWhite.jpg" class="img-fluid" style="height: 64px" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col d-grid justify-content-center pb-3"> 
+                        <h4>Depart Mode</h4>
                     </div>
                 </div>
                 
@@ -84,16 +112,6 @@
             
             const clothesDescription = document.getElementById('clothesDescription');
             const clothesValue = document.getElementById('clothesList');
-
-            // Hier weiterarbeiten!!!!!!!
-            // const personalData = document.getElementById('personalData');
-            // const bringFlag = true;
-
-            // if (bringFlag == false) {
-            //     personalData.innerText = "kdjadk";
-            // } else {
-            //     personalData.innerText = "Persönliche Datense";
-            // }
             
             const description = [
                 "Vorname: ",

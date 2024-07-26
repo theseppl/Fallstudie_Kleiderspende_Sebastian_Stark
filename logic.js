@@ -45,27 +45,6 @@ function activate_deactivateRegisterButton() {
       }
   }
 
-// const input = [
-//   document.getElementById('firstName'),
-//   document.getElementById('lastName'),
-//   document.getElementById("street"),
-//   document.getElementById("houseNr"),
-//   document.getElementById("city"),
-//   document.getElementById("telefon"),
-//   document.getElementById('mail'),
-//   document.getElementById('postCode'),
-// ]
-
-// const clothesInput = [
-//   document.getElementById('trousers'),
-//   document.getElementById('shirts'),
-//   document.getElementById("pullover"),
-//   document.getElementById("jackets"),
-//   document.getElementById("shoes"),
-//   document.getElementById("caps"),
-//   document.getElementById('other'),
-// ]
-
 // Array mit den ID-Werten der Kleidereingabefelder
 const clothesID = [
   "trousers",
@@ -76,13 +55,6 @@ const clothesID = [
   "caps",
   "other"
 ];
-
-// Array mit den Instanzen der Kleidereingabefelder wird über forEach-Schleife erzeugt
-let clothesInput = [];
-clothesID.forEach(value => {
-  let inputField = document.getElementById(value);
-  clothesInput.push(inputField);
-});
 
 // Array mit den ID-Werten der Spendendeneingabefelder
 const idStrings = [
@@ -96,10 +68,17 @@ const idStrings = [
   "mail"
 ];
 
+// Array mit den Instanzen der Kleidereingabefelder wird über forEach-Schleife erzeugt
+const clothesInput = [];
+clothesID.forEach(value => {
+  const inputField = document.getElementById(value);
+  clothesInput.push(inputField);
+});
+
 // Array mit den Instanzen der Spendendeneingabefelder wird über forEach-Schleife erzeugt
-let input = [];
+const input = [];
 idStrings.forEach(value => {
-  let inputField = document.getElementById(value);
+  const inputField = document.getElementById(value);
   input.push(inputField);
 });
 

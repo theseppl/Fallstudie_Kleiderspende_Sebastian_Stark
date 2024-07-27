@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
     xhr.send();
 });
 
+
 document.addEventListener("DOMContentLoaded", function() {
   var myFooter = document.getElementById("myFooter");
   var xhr = new XMLHttpRequest();
@@ -22,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
   xhr.send();
 }); 
 
+
 let radioOne = document.getElementById("radio1");
 function fetchOrBring() {
   if (radioOne.checked) {
@@ -31,19 +33,22 @@ function fetchOrBring() {
   }
 }
 
+
 function donate(){
-        window.open('/html/donate.html', '_self')
-    }
+    window.open('/html/donate.html', '_self')
+}
+
 
 function activate_deactivateRegisterButton() {
-      let acceptAGB = document.getElementById('accept_AGB');
-      let registerButton = document.getElementById('register_button');
-      if (acceptAGB.checked == true) {
-          registerButton.classList.remove('disabled');
-      } else {
-          registerButton.classList.add('disabled');
-      }
-  }
+    let acceptAGB = document.getElementById('accept_AGB');
+    let registerButton = document.getElementById('register_button');
+    if (acceptAGB.checked == true) {
+        registerButton.classList.remove('disabled');
+    } else {
+        registerButton.classList.add('disabled');
+    }
+}
+
 
 // Array mit den ID-Werten der Kleidereingabefelder
 const clothesID = [
@@ -55,6 +60,7 @@ const clothesID = [
   "caps",
   "other"
 ];
+
 
 // Array mit den ID-Werten der Spendendeneingabefelder
 const idStrings = [
@@ -68,12 +74,14 @@ const idStrings = [
   "mail"
 ];
 
+
 // Array mit den Instanzen der Kleidereingabefelder wird über forEach-Schleife erzeugt
-const clothesInput = [];
-clothesID.forEach(value => {
-  const inputField = document.getElementById(value);
-  clothesInput.push(inputField);
-});
+// const clothesInput = [];
+// clothesID.forEach(value => {
+//   const inputField = document.getElementById(value);
+//   clothesInput.push(inputField);
+// });
+
 
 // Array mit den Instanzen der Spendendeneingabefelder wird über forEach-Schleife erzeugt
 const input = [];
@@ -86,7 +94,6 @@ idStrings.forEach(value => {
 // Funktion zur Überprüfung der Pflichtfelder.
 function register() {
   let counter = 0;
-
 // for-Schleife um Aufruf von postalCode() nur bei erfolgreicher Validierung zu ermöglichen
   input.forEach(element => {
     if (element.value.trim() != '') {
@@ -100,6 +107,7 @@ function register() {
   // return false um Standardverhalten Seite neu laden zu vermeiden
   return false;
 }
+
 
 // Funktion für die Überprüfung der Postleitzahl bei der Registrierung  
 function postalCode() {
@@ -117,6 +125,7 @@ function postalCode() {
   }
 }
 
+
 // Funktion die verhindert, dass mit Enter-Taste Aktionen ausgelöst werden.
 // Dadurch wird sichergestellt, dass nur durch aktivierte Button Aktionen ausgelöst werden.
 document.addEventListener("keydown", function(event) {
@@ -125,13 +134,12 @@ document.addEventListener("keydown", function(event) {
     }
 });
 
-function final() {
 
+function final() {
   clothesID.forEach(element => {
     let elementValue = document.getElementById(element).value;
     sessionStorage.setItem(element, elementValue);
   });
-  
   window.open('/html/final.html', '_self');
   return false;
 }

@@ -54,7 +54,7 @@
                     </div>
 
                     <div class="row pt-3 d-grid justify-content-center">
-                        <h4>Ihre Spende im Überblick:</h4>
+                        <h4>Ihre Spende im Überblick: <span id="wert"></span></h4>
                     </div>
 
                     <div class="col-4 pt-1">
@@ -171,6 +171,9 @@
                 }
                 counter2++;
             });
+
+            const areaValue = sessionStorage.getItem("dropDownValue");
+            const areaOutput = document.getElementById("wert").innerText = areaValue;
         </script>
 
     </body>

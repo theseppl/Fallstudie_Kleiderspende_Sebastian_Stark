@@ -136,6 +136,9 @@ document.addEventListener("keydown", function(event) {
 
 
 function final() {
+  let dropDownValue = document.getElementById("dropDownID").value;
+  sessionStorage.setItem("dropDownValue", dropDownValue);
+
   clothesID.forEach(element => {
     let elementValue = document.getElementById(element).value;
     sessionStorage.setItem(element, elementValue);

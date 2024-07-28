@@ -42,6 +42,9 @@
                             </p>
                     </div>
                 </div>
+                <div class="row pt-3 d-grid justify-content-center">
+                    <h5 id="appointment"></h5> 
+                </div>
 
                 <!-- description list -->
                 <dl class="row mt-2 justify-content-center">
@@ -54,7 +57,7 @@
                     </div>
 
                     <div class="row pt-3 d-grid justify-content-center">
-                        <h4 id="overview">Ihre Spende für das Krisengebiet <span id="area"></span> im Überblick:</h4> 
+                        <h5 id="overview">Ihre Spende für das Krisengebiet <span id="area"></span> im Überblick:</h5> 
                     </div>
 
                     <div class="col-4 pt-1">
@@ -146,7 +149,6 @@
                     descriptionElement.classList.add("list-group-item");
                     descriptionElement.textContent = description[counter];
                     finalDescription.appendChild(descriptionElement);
-
                     
                     const valueListElement = document.createElement('li');
                     valueListElement.classList.add("list-group-item");
@@ -155,6 +157,11 @@
                     counter++;
                 }
             });
+
+            if (counter != 0) {
+                const appointment = document.getElementById("appointment");
+                appointment.innerHTML = "Bitte prüfen Sie Ihre persönlichen Angaben. <br> Wir setzen uns zeitnah mit Ihnen zur Abstimmung der Abholung in Verbindung.";
+            }
 
             let counter2 = 0;
             let zeroCounter = 0;
@@ -167,7 +174,6 @@
                     descriptionElement.classList.add("list-group-item");
                     descriptionElement.textContent = clothesName[counter2];
                     clothesDescription.appendChild(descriptionElement);
-
                     
                     const valueListElement = document.createElement('li');
                     valueListElement.classList.add("list-group-item");

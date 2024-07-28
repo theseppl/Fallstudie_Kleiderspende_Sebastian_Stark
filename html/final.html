@@ -54,7 +54,7 @@
                     </div>
 
                     <div class="row pt-3 d-grid justify-content-center">
-                        <h4>Ihre Spende im Überblick: <span id="wert"></span></h4>
+                        <h4 id="overview">Ihre Spende für das Krisengebiet <span id="area"></span> im Überblick:</h4> 
                     </div>
 
                     <div class="col-4 pt-1">
@@ -105,13 +105,16 @@
         <script src="/logic.js"></script>
         <script src="/assets/js/bootstrap.bundle.min.js"></script>
 
-        <!-- Lokales script um Fehler in Konsole zu vermeiden -->
+        <!-- Lokales script, damit Aktionen nur bei Aufruf von final.html ausgeführt werden und somit Fehler im Browser vermieden werden. -->
         <script>
             const finalDescription = document.getElementById('finalDescription');
             const finalValue = document.getElementById('finalList');
             
             const clothesDescription = document.getElementById('clothesDescription');
             const clothesValue = document.getElementById('clothesList');
+
+            const areaValue = sessionStorage.getItem("dropDownValue");
+            const areaOutput = document.getElementById("area").innerText = areaValue;
             
             const description = [
                 "Vorname: ",
@@ -154,6 +157,8 @@
             });
 
             let counter2 = 0;
+            let zeroCounter = 0;
+            let zeroCompare = clothesID.length;
             clothesID.forEach(value => {
                 const inputValue = sessionStorage.getItem(value);
 
@@ -168,12 +173,17 @@
                     valueListElement.classList.add("list-group-item");
                     valueListElement.textContent = inputValue;
                     clothesValue.appendChild(valueListElement);                    
+                } else {
+                    zeroCounter++;
+                    if (zeroCounter === zeroCompare) {
+                        const reminder = document.getElementById("overview");
+                        reminder.innerText = "Bitte machen Sie noch Angaben zu den Kleidern, welche Sie spenden möchten.";
+                        zeroCounter = 0;  
+                    }
                 }
                 counter2++;
             });
 
-            const areaValue = sessionStorage.getItem("dropDownValue");
-            const areaOutput = document.getElementById("wert").innerText = areaValue;
         </script>
 
     </body>

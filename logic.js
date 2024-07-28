@@ -71,7 +71,9 @@ const idStrings = [
   "postCode",
   "city",
   "telefon",
-  "mail"
+  "mail",
+  "date",
+  "time"
 ];
 
 

@@ -112,7 +112,7 @@
                     <div class="col-lg-6 col-sm-12">
                         <div class="input-group">
                             <span class="input-group-text" style="width: 120px;"><b>Abholdatum</b></span>
-                            <input type="date" class="form-control" id="mail" required>
+                            <input type="date" class="form-control" id="date" required>
                         </div>
                     </div>
                 </div>
@@ -121,7 +121,7 @@
                     <div class="col-lg-6 col-sm-12">
                         <div class="input-group">
                             <span class="input-group-text" style="width: 120px;"><b>Abholuhrzeit</b></span>
-                            <input type="time" class="form-control" id="time" required>
+                            <input type="time" class="form-control" id="time" name="time" step="1800" required>
                         </div>
                     </div>
                 </div>
@@ -165,5 +165,16 @@
 
         <script src="/logic.js"></script>
         <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Setzt das den nächsten Tag als frühestes Datum zur Auswahl -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var today = new Date();
+                today.setDate(today.getDate() + 1);
+                var tomorrow = today.toISOString().split('T')[0];
+                document.getElementById('date').setAttribute('min', tomorrow);
+            });
+        </script>
+
     </body>
 </html>

@@ -38,7 +38,7 @@
                     <div class="col">
                         <h2>Zusammenfassung</h2>
                             <p>
-                                Herzlichen Dank für Ihre großzügige Kleiderspende! Bei Depart Mode setzen wir uns mit Leidenschaft dafür ein, Menschen in Not- und besonderen Lebenssituationen zu unterstützen. Ihre Spende trägt dazu bei, dass wir gemeinsam Wärme und Würde schenken können.
+                                Herzlichen Dank für Ihre Spendenbereitschaft! Bei Depart Mode setzen wir uns mit Leidenschaft dafür ein, Menschen in Not- und besonderen Lebenssituationen zu unterstützen. Ihre Spende trägt dazu bei, dass wir gemeinsam Wärme und Würde schenken können.
                             </p>
                     </div>
                 </div>
@@ -161,6 +161,8 @@
             if (counter != 0) {
                 const appointment = document.getElementById("appointment");
                 appointment.innerHTML = "Bitte prüfen Sie Ihre persönlichen Angaben. <br> Wir setzen uns zeitnah mit Ihnen zur Abstimmung der Abholung in Verbindung.";
+            }else {
+                appointment.innerHTML = "Bitte bringen Sie Ihre Spende zu einer unserer Geschäftsstellen.";
             }
 
             let counter2 = 0;

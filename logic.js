@@ -77,14 +77,6 @@ const idStrings = [
 ];
 
 
-// Array mit den Instanzen der Kleidereingabefelder wird über forEach-Schleife erzeugt
-// const clothesInput = [];
-// clothesID.forEach(value => {
-//   const inputField = document.getElementById(value);
-//   clothesInput.push(inputField);
-// });
-
-
 // Array mit den Instanzen der Spendendeneingabefelder wird über forEach-Schleife erzeugt
 const input = [];
 idStrings.forEach(value => {
@@ -92,7 +84,7 @@ idStrings.forEach(value => {
   input.push(inputField);
 });
 
-  
+
 // Funktion zur Überprüfung der Pflichtfelder.
 function register() {
   let counter = 0;

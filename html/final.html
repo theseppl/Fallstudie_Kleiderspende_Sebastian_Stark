@@ -74,7 +74,7 @@
 
                 <div class="row my-3 justify-content-center">
                     <div class="col d-grid col-lg-3 col-sm-12">
-                        <button id="register_button" class="btn btn-primary" onclick="finish()">Abschließen</button>
+                        <button id="finalButton" class="btn btn-primary" onclick="finish()">Abschließen</button>
                     </div>
                     <div class="col d-grid col-lg-3 col-sm-12">
                         <button id="register_button" class="btn btn-secondary" onclick="history.back()">zurück</button>
@@ -128,8 +128,8 @@
                 "Stadt: ",
                 "Telefon: ",
                 "Mail: ",
-                "Wunschdatum: ",
-                "Wunschzeit: "
+                "Abholdatum: ",
+                "Abholzeit: "
                 ];
             
             const clothesName = [
@@ -168,6 +168,7 @@
             let counter2 = 0;
             let zeroCounter = 0;
             let zeroCompare = clothesID.length;
+        
             clothesID.forEach(value => {
                 const inputValue = sessionStorage.getItem(value);
 
@@ -180,12 +181,16 @@
                     const valueListElement = document.createElement('li');
                     valueListElement.classList.add("list-group-item");
                     valueListElement.textContent = inputValue;
-                    clothesValue.appendChild(valueListElement);                    
+                    clothesValue.appendChild(valueListElement);
+                    
                 } else {
                     zeroCounter++;
                     if (zeroCounter === zeroCompare) {
                         const reminder = document.getElementById("overview");
+                        reminder.style.color = "red";
+                        const finalButton = document.getElementById("finalButton");
                         reminder.innerText = "Bitte machen Sie noch Angaben zu den Kleidern, welche Sie spenden möchten.";
+                        finalButton.classList.add('disabled');
                         zeroCounter = 0;  
                     }
                 }

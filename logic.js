@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     var meineNavbar = document.getElementById("meine-navbar");
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "navigation.html", true);
+    xhr.open("GET", "./html/navigation.html"", true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
             meineNavbar.innerHTML = xhr.responseText;
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener("DOMContentLoaded", function() {
   var myFooter = document.getElementById("myFooter");
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "/html/footer.html", true);
+  xhr.open("GET", "./html/footer.html", true);
   xhr.onreadystatechange = function() {
       if (xhr.readyState === 4 && xhr.status === 200) {
           myFooter.innerHTML = xhr.responseText;
@@ -27,15 +27,15 @@ document.addEventListener("DOMContentLoaded", function() {
 let radioOne = document.getElementById("radio1");
 function fetchOrBring() {
   if (radioOne.checked) {
-    window.open('/html/clothes.html', '_self')
+    window.open('./html/clothes.html', '_self')
   } else {
-    window.open('/html/fetchRegister.html', '_self')
+    window.open('./html/fetchRegister.html', '_self')
   }
 }
 
 
 function donate(){
-    window.open('/html/donate.html', '_self')
+    window.open('./html/donate.html', '_self')
 }
 
 
@@ -112,10 +112,10 @@ function postalCode() {
       let elementValue = document.getElementById(element).value;
       sessionStorage.setItem(element, elementValue);
     });
-    window.open('/html/clothes.html', '_self')
+    window.open('./html/clothes.html', '_self')
 
   } else {
-    window.open('/html/wrongPostCode.html', '_self')
+    window.open('./html/wrongPostCode.html', '_self')
   }
 }
 
@@ -137,13 +137,13 @@ function final() {
     let elementValue = document.getElementById(element).value;
     sessionStorage.setItem(element, elementValue);
   });
-  window.open('/html/final.html', '_self');
+  window.open('./html/final.html', '_self');
   return false;
 }
 
 function finish() {
   sessionStorage.clear();
-  window.open('/index.html', '_self');
+  window.open('./index.html', '_self');
 }
 
 

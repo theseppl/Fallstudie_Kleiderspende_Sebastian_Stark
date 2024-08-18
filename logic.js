@@ -27,9 +27,9 @@ document.addEventListener("DOMContentLoaded", function() {
 let radioOne = document.getElementById("radio1");
 function fetchOrBring() {
   if (radioOne.checked) {
-    window.open('./html/clothes.html', '_self')
+    window.open('./clothes.html', '_self')
   } else {
-    window.open('./html/fetchRegister.html', '_self')
+    window.open('./fetchRegister.html', '_self')
   }
 }
 
@@ -112,10 +112,10 @@ function postalCode() {
       let elementValue = document.getElementById(element).value;
       sessionStorage.setItem(element, elementValue);
     });
-    window.open('./html/clothes.html', '_self')
+    window.open('./clothes.html', '_self')
 
   } else {
-    window.open('./html/wrongPostCode.html', '_self')
+    window.open('./wrongPostCode.html', '_self')
   }
 }
 
@@ -137,7 +137,7 @@ function final() {
     let elementValue = document.getElementById(element).value;
     sessionStorage.setItem(element, elementValue);
   });
-  window.open('./html/final.html', '_self');
+  window.open('./final.html', '_self');
   return false;
 }
 

@@ -27,25 +27,25 @@ document.addEventListener("DOMContentLoaded", function() {
 let radioOne = document.getElementById("radio1");
 function fetchOrBring() {
   if (radioOne.checked) {
-    window.open('./clothes.html', '_self')
+    window.open("./clothes.html", "_self")
   } else {
-    window.open('./fetchRegister.html', '_self')
+    window.open("./fetchRegister.html", "_self")
   }
 }
 
 
 function donate(){
-    window.open("./donate.html", '_self')
+    window.open("./donate.html", "_self")
 }
 
 
 function activate_deactivateRegisterButton() {
-    let acceptAGB = document.getElementById('accept_AGB');
-    let registerButton = document.getElementById('register_button');
+    let acceptAGB = document.getElementById("accept_AGB");
+    let registerButton = document.getElementById("register_button");
     if (acceptAGB.checked == true) {
-        registerButton.classList.remove('disabled');
+        registerButton.classList.remove("disabled");
     } else {
-        registerButton.classList.add('disabled');
+        registerButton.classList.add("disabled");
     }
 }
 
@@ -112,10 +112,10 @@ function postalCode() {
       let elementValue = document.getElementById(element).value;
       sessionStorage.setItem(element, elementValue);
     });
-    window.open('./clothes.html', '_self')
+    window.open("./clothes.html", "_self")
 
   } else {
-    window.open('./wrongPostCode.html', '_self')
+    window.open("./wrongPostCode.html", "_self")
   }
 }
 
@@ -137,13 +137,13 @@ function final() {
     let elementValue = document.getElementById(element).value;
     sessionStorage.setItem(element, elementValue);
   });
-  window.open('./final.html', '_self');
+  window.open("./final.html", "_self");
   return false;
 }
 
 function finish() {
   sessionStorage.clear();
-  window.open('./index.html', '_self');
+  window.open("./index.html", "_self");
 }
 
 

@@ -35,7 +35,7 @@ function fetchOrBring() {
 
 
 function donate(){
-    window.open('../donate.html', '_self')
+    window.open("./donate.html", '_self')
 }
 
 

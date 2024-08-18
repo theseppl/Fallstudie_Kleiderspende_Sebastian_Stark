@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+        <link rel="shortcut icon" href="/pictures/logo.jpg" type="image/png">
+        <title>Anmeldung Abholung</title>
+        
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg" id="meine-navbar"  ></nav>     
+        </header>
+
+        <main>
+            <form class="container" onsubmit="return register()">
+
+                <div class="row mt-lg-5 pt-3 justify-content-center">
+                    <div class="col-lg-6 col-sm-12">
+                        <h4>Bitte geben Sie Ihre Abholadresse an</h4>
+                        <p>Aktuell mögliche Abholgebiete liegen in folgenden Postleitzahlbereichen: <br>01... , 10... , 26... , 36... , 40... oder 80...</p>
+                    </div>
+                </div>
+
+                <div class="row mt-1 justify-content-center">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="input-group">
+                            <span class="input-group-text" style="width: 100px;"><b>Vorname</b></span>
+                            <input type="text" class="form-control" id="firstName" placeholder="Vorname" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-2 justify-content-center">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="input-group">
+                            <span class="input-group-text" style="width: 100px;"><b>Name</b></span>
+                            <input type="text" class="form-control" id="lastName" placeholder="Nachname" required>
+                        </div>
+                    </div>
+                </div>
+             
+                <div class="row mt-2 justify-content-center">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="input-group">
+                            <span class="input-group-text" style="width: 100px;"><b>Straße</b></span>
+                            <input type="text" class="form-control" id="street" placeholder="Straße" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-2 justify-content-center">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="input-group">
+                            <span class="input-group-text" style="width: 100px;"><b>Hausnr.</b></span>
+                            <input type="text" class="form-control" id="houseNr" placeholder="Hausnummer" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-2 justify-content-center">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="input-group">
+                            <span class="input-group-text" style="width: 100px;"><b>Ort</b></span>
+                            <input type="text" class="form-control" id="city" placeholder="Ort" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-2 justify-content-center">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="input-group">
+                            <span class="input-group-text" style="width: 100px;"><b>PLZ</b></span>
+                            <input type="text" class="form-control" id="postCode" placeholder="01234" pattern="[0-9]{5}" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-4 justify-content-center">
+                    <div class="col-lg-6 col-sm-12">
+                        <h4>Ihre Kontaktdaten</h4>
+                    </div>
+                </div>
+
+                <div class="row mt-1 justify-content-center">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="input-group">
+                            <span class="input-group-text" style="width: 100px;"><b>Telefon</b></span>
+                            <input type="tel" class="form-control" id="telefon" placeholder="01701234567" pattern="[0-9]{10}|[0-9]{11}|[0-9]{12}|[0-9]{13}|[0-9]{14}|[0-9]{15}|" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-2 justify-content-center">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="input-group">
+                            <span class="input-group-text" style="width: 100px;"><b>Mail</b></span>
+                            <input type="email" class="form-control" id="mail" placeholder="mail@demo.de" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-4 justify-content-center">
+                    <div class="col-lg-6 col-sm-12">
+                        <h4>Gewünschter Abholzeitpunkt</h4>
+                    </div>
+                </div>
+
+                <div class="row mt-1 justify-content-center">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="input-group">
+                            <span class="input-group-text" style="width: 120px;"><b>Abholdatum</b></span>
+                            <input type="date" class="form-control" id="date" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-2 justify-content-center">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="input-group">
+                            <span class="input-group-text" style="width: 120px;"><b>Abholuhrzeit</b></span>
+                            <input type="time" class="form-control" id="time" step="1800" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-2 justify-content-center">
+                    <div class="col-lg-3 col-sm-12">
+                        <div class="form-check form-switch" >
+                            <input class="form-check-input" type="checkbox" role="switch" id="accept_AGB" onchange="activate_deactivateRegisterButton()" autocomplete="off">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Ich akzeptiere die AGBs des Depart Mode e.V.</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-12">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="new_member">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Ich möchte Mitglied werden und zusätzliches Infomaterial beziehen.</label>
+                        </div>
+                    </div> 
+                </div>
+
+                <div class="row my-3 justify-content-center">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button id="register_button" class="btn btn-primary disabled" type="submit">Registrieren</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col d-grid justify-content-center">
+                        <p>Zum Aktivieren des Buttons müssen Sie unsere AGB akzeptieren.</p>
+                    </div>
+                </div>
+
+            </form>
+        </main>
+        
+        <footer>
+            <nav class="navbar navbar-expand-lg sticky-bottom" id="myFooter"></nav>    
+        </footer>
+
+        <script src="/logic.js"></script>
+        <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Setzt das den nächsten Tag als frühestes Datum zur Auswahl -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var today = new Date();
+                today.setDate(today.getDate() + 1);
+                var tomorrow = today.toISOString().split('T')[0];
+                document.getElementById('date').setAttribute('min', tomorrow);
+            });
+        </script>
+
+    </body>
+</html>
